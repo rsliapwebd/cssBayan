@@ -38,7 +38,8 @@ body {
   background-color: blue;
 }
 
-.content, .acc-img {
+.content,
+.acc-img {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -53,6 +54,7 @@ body {
 .acc-label {
   cursor: pointer;
   background-color: red;
+  border-radius: 1rem;
   text-align: center;
   display: flex;
   justify-content: space-between;
@@ -64,7 +66,8 @@ body {
   display: none;
 }
 
-.acc-input, .acc-label {
+.acc-input,
+.acc-label {
   padding: 1.5rem 2rem;
 }
 
@@ -72,7 +75,26 @@ body {
   display: none;
 }
 
+.material-symbols-outlined {
+  font-size: 1.2rem;
+}
+
 .acc-input:checked ~ .content {
   display: block;
 }
 
+.material-symbols-outlined {
+  display: none;
+}
+
+.accordion:hover .material-symbols-outlined {
+  display: inline;
+}
+
+.acc-input ~ .material-symbols-outlined {
+  transition: all ease 0.3s;
+}
+
+.acc-input:checked ~ .acc-label .material-symbols-outlined {
+  transform: rotate(45deg);
+}
